@@ -51,18 +51,18 @@
       var val = e.val();
       if (e.is(':checkbox')) {
         var allChecks = e.parent()
-              .find("input:checkbox[name='" + e.attr('name') + "']:checked"),
-            checkVals = [];
-        val = $.map(allChecks, function(e){return $(e).val();}).join();
+              .find("input:checkbox[name='" + e.attr('name') + "']:checked");
+        val = $.map(allChecks, function(e){ return $(e).val(); }).join();
       }
       _this.jFQuery[e.attr('name')] = val;
       var url = window.location.origin + window.location.pathname,
-          params = $.extend(false, readUrlParams(), _this.jFQuery);
+          params = $.extend(false, readUrlParams(), _this.jFQuery),
+          paramStr = $.param($.each(params, function(key, value) {
+            if (value === ""){ delete params[key]; }
+          }));
       window.history.pushState(
         window.history.state, document.title,
-        url + '?' + $.param($.each(params, function(key, value) {
-          if (value === ""){ delete params[key]; }
-        })));
+        url + (paramStr.length > 0 ? '?' + paramStr : '') );
     }
   }
   $.fn.jFilt = function(options) {
