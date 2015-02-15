@@ -1,0 +1,29 @@
+{
+  "name": "jFilt",
+  "version": "0.0.0",
+  "authors": [
+    "Mustafa Rizvi <mstfrzv@gmail.com>"
+  ],
+  "description": "form <-> url",
+  "keywords": [
+    "form",
+    "filter",
+    "url",
+    "parameters",
+    "query",
+    "get"
+  ],
+  "license": "MIT",
+  "homepage": "mustafarizvi.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "./bin/jfilt.js",
+  "dependencies": {
+    "jquery": "~1.9.0"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jFilt!</title>
+  <script src="../bower_components/jquery/jquery.min.js"></script>
+  <script src="../bin/jfilt.js?dev"></script>
+  <script>
+    $(function(){
+      $("form").jFilt();
+    });
+  </script>
+  <style>
+    #test-form {
+      width: 250px;
+      margin: 50px auto 0;
+      border: 1px solid;
+      padding: 50px;
+    }
+    .form-element {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <form id="test-form" name="test-form">
+    <label for='textbox'>Text Box</label>
+    <input name='textbox' class="form-element" type="text" placeholder="hello">
+    <label for='password'>Password</label>
+    <input name='password' class="form-element" type="password" placeholder="***">
+    <label for='text-area'>Text Area</label>
+    <textarea name='text-area' class="form-element"></textarea>
+    <div class="form-element">
+      <label for='radio-button'>Radio</label>
+      <input type="radio" name="radio-button" value="yes" checked>Yes</input>
+      <input type="radio" name="radio-button" value="no">No</input>
+    </div>
+    <div class="form-element">
+      <label for='check-boxes'>Checkboxes</label>
+      <input type="checkbox" name="check-boxes-1" value="1">One</input>
+      <input type="checkbox" name="check-boxes-2" value="2">Two</input>
+      <input type="checkbox" name="check-boxes-3" value="3">Three</input>
+    </div>
+    <label for='text-area'>Select</label>
+    <select name='select-option' class="form-element" >
+      <option value="1">one</option>
+      <option value="2">two</option>
+    </select>
+  </form>
+  
+</body>
+</html>
