@@ -35,8 +35,9 @@
     var urlParams = readUrlParams();
     for(var key in urlParams) {
       e.find("[name='" + key + "']").each(function() {
-          if($(this).is(':radio')) {
-            $(this).val() == urlParams[key]
+          if ($(this).is(':checkbox, :radio')) {
+            var checkedVals = urlParams[key].split(',');
+            $.inArray($(this).val(), checkedVals) > -1
               ? $(this).prop('checked', true) :$(this).prop('checked', false);
           } else {
             $(this).val(urlParams[key]);
@@ -47,7 +48,14 @@
   function handleChange(e) {
     if (!e.is(_this.jFOptions.ignore.join()) && history.pushState) {
       _this.jFQuery = _this.JFQuery || {};
-      _this.jFQuery[e.attr('name')] = e.val();
+      var val = e.val();
+      if (e.is(':checkbox')) {
+        var allChecks = e.parent()
+              .find("input:checkbox[name='" + e.attr('name') + "']:checked"),
+            checkVals = [];
+        val = $.map(allChecks, function(e){return $(e).val();}).join();
+      }
+      _this.jFQuery[e.attr('name')] = val;
       var url = window.location.origin + window.location.pathname,
           params = $.extend(false, readUrlParams(), _this.jFQuery);
       window.history.pushState(

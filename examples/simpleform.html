@@ -37,11 +37,19 @@
       <input type="radio" name="radio-button" value="yes" checked>Yes</input>
       <input type="radio" name="radio-button" value="no">No</input>
     </div>
-    <div class="form-element">
-      <label for='check-boxes'>Checkboxes</label>
-      <input type="checkbox" name="check-boxes-1" value="1">One</input>
-      <input type="checkbox" name="check-boxes-2" value="2">Two</input>
-      <input type="checkbox" name="check-boxes-3" value="3">Three</input>
+    <div>
+      <label for='check-multi'>Checkboxes (different groups)</label>
+      <div class="form-element">
+        <input type="checkbox" name="check-multi-1" value="1">One</input>
+        <input type="checkbox" name="check-multi-2" value="2">Two</input>
+      </div>
+    </div>
+    <div>
+      <label for='check-single'>Checkboxes (same groups)</label>
+      <div class="form-element">
+        <input type="checkbox" name="check-box" value="1">One</input>
+        <input type="checkbox" name="check-box" value="2">Two</input>
+      </div>
     </div>
     <label for='text-area'>Select</label>
     <select name='select-option' class="form-element" >
