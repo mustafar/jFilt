@@ -58,7 +58,7 @@
       var url = window.location.origin + window.location.pathname,
           params = $.extend(false, readUrlParams(), _this.jFQuery),
           paramStr = $.param($.each(params, function(key, value) {
-            if (value === ""){ delete params[key]; }
+            if (value === ''){ delete params[key]; }
           }));
       window.history.pushState(
         window.history.state, document.title,
